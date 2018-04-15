@@ -1,0 +1,11 @@
+{
+	"tc01":{
+		"name": "Log in successfully with a valid username and password",
+		"username": "admin@example.com",
+		"password": "admin",
+		"message": "You have been successfully logged out."
+	},
+	"tc02":{
+
+	}
+}

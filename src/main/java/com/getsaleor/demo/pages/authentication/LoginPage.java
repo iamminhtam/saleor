@@ -3,6 +3,7 @@ package com.getsaleor.demo.pages.authentication;
 import com.getsaleor.demo.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.Common;
 import utilities.ElementAction;
 
 public class LoginPage extends BasePage {
@@ -13,26 +14,31 @@ public class LoginPage extends BasePage {
     ELEMENTS
      */
     @FindBy(id = "id_username")
-    private WebElement usernameInput;
+    private WebElement txtUsername;
     @FindBy(id = "id_password")
-    private WebElement passwordInput;
+    private WebElement txtPassword;
     @FindBy(xpath = "//button[@class='btn primary narrow']")
-    WebElement loginBtn;
+    private WebElement btnLogin;
+    @FindBy(css = "div.alert-dismissable")
+    private WebElement errorMessage;
 
     /*
     PUBLIC ACTIONS
      */
     public LoginPage typeUsername(String username){
-        ElementAction.type(usernameInput, "Username", username);
+        ElementAction.type(txtUsername, "Username", username);
         return this;
     }
     public LoginPage typePassword(String password){
-        ElementAction.type(passwordInput, "Password", password);
+        ElementAction.type(txtPassword, "Password", password);
         return this;
     }
     public LoginPage clickLoginBtn(){
-        ElementAction.click(loginBtn, "Log in");
+        ElementAction.click(btnLogin, "Log in");
         return this;
+    }
+    public String getErrorMessage(){
+        return Common.getTextNode(errorMessage);
     }
 
 

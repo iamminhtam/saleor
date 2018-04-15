@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Smoke Tests">
-    <test name="Authentication">
+    <test name="authentication">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.getsaleor.demo.BaseTest"/>
+            <class name="com.getsaleor.demo.authentication.LoginTest"/>
         </classes>
     </test>
 </suite>

@@ -11,7 +11,7 @@ public class PageGenerator {
     public static void initializeDriver(WebDriver pDriver){
         driver = pDriver;
     }
-    // JAVA Generics to Create and return a New Page
+    // Java Generics to Create and return a New Page
     public static <TPage extends BasePage> TPage getInstance (Class<TPage> pageClass){
         try {
             //Initialize the Page with its elements and return it.
