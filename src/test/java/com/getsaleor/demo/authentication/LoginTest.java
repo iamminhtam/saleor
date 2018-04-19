@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest {
         homePage = PageGenerator.getInstance(HomePage.class);
     }
 
-    @Test(description = "Login successfully with a valid email and password")
+    @Test(description = "Login successfully with a valid email and password", priority = 2)
     public void loginSucceeded(){
         //Test data
         testData = dataReader.get("tc01");
@@ -49,9 +49,10 @@ public class LoginTest extends BaseTest {
         System.out.println("Logged out");
     }
 
-    @Test(description = "Log in unseccessfully with invalid username or passsword")
+    @Test(description = "Log in unseccessfully with invalid username or passsword", priority = 1)
     public void loginUnsucceeded(){
-        homePage = PageGenerator.getInstance(HomePage.class);
+//        homePage = PageGenerator.getInstance(HomePage.class);
+
         //Test data
         testData = dataReader.get("tc02");
         final String USERNAME = (String) testData.get("username");
@@ -60,9 +61,10 @@ public class LoginTest extends BaseTest {
 
         //Test steps
         homePage.clickLogin();
+        loginPage = PageGenerator.getInstance(LoginPage.class);
         loginPage.typeUsername(USERNAME)
-                 .typePassword(PASSWORD)
-                 .clickLoginBtn();
+                .typePassword(PASSWORD)
+                .clickLoginBtn();
         Common.sleep(2);
 
         //Assertion

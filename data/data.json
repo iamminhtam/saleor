@@ -6,6 +6,9 @@
 		"message": "You have been successfully logged out."
 	},
 	"tc02":{
-
+		"name": "Log in unsuccessfully with a invalid username or password",
+		"username": "admin@example.com",
+		"password": "admin123",
+		"errorMessage": "Please enter a correct email and password. Note that both fields may be case-sensitive."
 	}
 }
