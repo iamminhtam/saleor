@@ -7,8 +7,37 @@
 	},
 	"tc02":{
 		"name": "Log in unsuccessfully with a invalid username or password",
-		"username": "admin@example.com",
-		"password": "admin123",
+		"username": "admin123@example.com",
+		"password": "admin",
 		"errorMessage": "Please enter a correct email and password. Note that both fields may be case-sensitive."
-	}
+	},
+	"tc03":{
+		"name": "Log in unsuccessfully with missing username or password",
+		"username": "",
+		"password": "admin",
+		"errorMessage": "This field is required."
+	},
+	"tc04":{
+		"name": "Log in unsuccessfully with username is not case sensitive",
+		"username": "Admin@example.com",
+		"password": "admin",
+		"errorMessage": "Please enter a correct email and password. Note that both fields may be case-sensitive."
+	},
+	"tc05":{
+		"name": "Log in successfully as username is trimmed before validation",
+		"username": "   admin@example.com   ",
+		"password": "admin",
+		"message": "You have been successfully logged out."
+	},
+    "tc06":{
+      "name": "Log in unsuccessfully as username is a invalid email address",
+      "username": "admin  @example.com",
+      "password": "admin",
+      "errorMessage": "Enter a valid email address."
+    },
+
+    "tc07":{
+
+    }
+
 }

@@ -29,6 +29,9 @@ public class HomePage extends BasePage {
     @FindBy(css="div.alert-success")
     private WebElement messageSuccess;
 
+    @FindBy(css ="ul.menu li.menu__item.nav-item")
+    private List<WebElement> menu;
+
     /*
     PUBLIC ACTIONS
      */
@@ -54,5 +57,26 @@ public class HomePage extends BasePage {
     public String getMessageWhenLogout(){
         return Common.getTextNode(messageSuccess);
     }
-
+    //gom function => BasePage
+    public void clickApparelLink(){
+        if(menu != null){
+//            for(int i = 0; i < menu.size(); i++){
+//                String item = menu.get(i).getText();
+//                System.out.println(item);
+//                if( item == "APPAREL" || item == "Apparel" ){
+//                    menu.get(i).click();
+//                    break;
+//                }else{
+//                    System.out.println("Not found this item");
+//                }
+//                break;
+//            }
+            ElementAction.click(menu.get(0), "Apparel");
+        }
+    }
+    public void clickGroceriesLink(){
+        if(menu != null){
+            ElementAction.click(menu.get(2), "Groceries");
+        }
+    }
 }

@@ -1,6 +1,7 @@
 package utilities;
 
 import com.getsaleor.demo.BasePage;
+import com.getsaleor.demo.BaseStorePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -21,4 +22,15 @@ public class PageGenerator {
             throw e;
         }
     }
+    public static <TPage extends BaseStorePage> TPage getInstanceStorePage (Class<TPage> pageClass){
+        try {
+            //Initialize the Page with its elements and return it.
+            return PageFactory.initElements(driver, pageClass);
+        } catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+
 }

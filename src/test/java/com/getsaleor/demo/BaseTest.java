@@ -2,10 +2,7 @@ package com.getsaleor.demo;
 
 import org.json.simple.JSONObject;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import utilities.DataReader;
 import utilities.DriverFactory;
@@ -26,7 +23,6 @@ public class BaseTest {
         PageGenerator.initializeDriver(driver);
         System.out.println("Go to Saleor");
     }
-
     @AfterTest
     public void cleanUpTest(){
         driver.quit();

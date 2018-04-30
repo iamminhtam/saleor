@@ -4,7 +4,8 @@
     <test name="authentication">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.getsaleor.demo.authentication.LoginTest"/>
+            <!--<class name="com.getsaleor.demo.authentication.LoginTest"/>-->
+            <class name="com.getsaleor.demo.pages.CartTest"/>
         </classes>
     </test>
 </suite>

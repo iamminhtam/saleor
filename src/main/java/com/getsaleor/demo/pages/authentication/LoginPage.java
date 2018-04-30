@@ -19,12 +19,20 @@ public class LoginPage extends BasePage {
     private WebElement txtPassword;
     @FindBy(xpath = "//button[@class='btn primary narrow']")
     private WebElement btnLogin;
-    @FindBy(css = "div.alert-dismissable")
+    @FindBy(css = "div.alert-danger")
     private WebElement errorMessage;
 
     /*
     PUBLIC ACTIONS
      */
+    public LoginPage clearUsername(){
+        ElementAction.clear(txtUsername, "Username");
+        return this;
+    }
+    public LoginPage clearPassword(){
+        ElementAction.clear(txtPassword, "Password");
+        return this;
+    }
     public LoginPage typeUsername(String username){
         ElementAction.type(txtUsername, "Username", username);
         return this;
