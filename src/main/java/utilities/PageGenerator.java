@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class PageGenerator {
 
     private static WebDriver driver;
-
     public static void initializeDriver(WebDriver pDriver){
         driver = pDriver;
     }
@@ -31,6 +30,4 @@ public class PageGenerator {
             throw e;
         }
     }
-
-
 }

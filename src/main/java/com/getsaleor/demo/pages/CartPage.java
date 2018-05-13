@@ -69,7 +69,7 @@ public class CartPage extends BasePage {
             return null;
         }
     }
-    public void typeQuantity(int number){
+    public void typeQuantity(String number){
         String quantity = String.valueOf(number);
         if(inputQuantity != null){
             for(int i = 0; i<inputQuantity.size(); i++){

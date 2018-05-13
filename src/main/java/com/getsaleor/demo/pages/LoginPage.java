@@ -1,4 +1,4 @@
-package com.getsaleor.demo.pages.authentication;
+package com.getsaleor.demo.pages;
 
 import com.getsaleor.demo.BasePage;
 import org.openqa.selenium.WebElement;
@@ -15,12 +15,19 @@ public class LoginPage extends BasePage {
      */
     @FindBy(id = "id_username")
     private WebElement txtUsername;
+
     @FindBy(id = "id_password")
     private WebElement txtPassword;
-    @FindBy(xpath = "//button[@class='btn primary narrow']")
+
+    @FindBy(xpath = "//button[contains(@class, 'primary')]")
     private WebElement btnLogin;
+
     @FindBy(css = "div.alert-danger")
     private WebElement errorMessage;
+
+    @FindBy(linkText = "Forgot password?")
+    private WebElement linkForgotPassword;
+
 
     /*
     PUBLIC ACTIONS
@@ -49,5 +56,11 @@ public class LoginPage extends BasePage {
         return Common.getTextNode(errorMessage);
     }
 
+    public LoginPage clickForgotPassword(){
+        if(linkForgotPassword != null){
+            ElementAction.click(linkForgotPassword, "Forgot password");
+        }
+        return this;
+    }
 
 }

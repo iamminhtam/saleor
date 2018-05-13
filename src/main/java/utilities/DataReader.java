@@ -7,7 +7,7 @@ import java.io.FileReader;
 
 public class DataReader {
     private JSONObject jsonObject;
-
+    //Hàm chuyển chuỗi thành JSON object
     public DataReader(String fileName){
         JSONParser parser = new JSONParser();
 
@@ -18,7 +18,7 @@ public class DataReader {
             e.printStackTrace();
         }
     }
-
+    //Hàm đọc dữ liệu từ JSON object
     public JSONObject get(String key){
         return (JSONObject) jsonObject.get(key);
     }

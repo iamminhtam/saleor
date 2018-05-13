@@ -13,8 +13,8 @@ public class ProductPage extends BasePage {
     WebElement txtProductName;
     @FindBy(id = "id_quantity")
     WebElement txtQuantity;
-    @FindBy(css = "button.btn.primary")
-    WebElement btnAddToCart;
+    @FindBy(xpath = "//button[contains(@class, 'primary')]")
+    private WebElement btnAddToCart;
 
     /*
     PUBLIC ACTION

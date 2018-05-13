@@ -23,5 +23,4 @@ public class Common {
         }
         return text;
     }
-
 }

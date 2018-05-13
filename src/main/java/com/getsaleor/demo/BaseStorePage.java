@@ -25,15 +25,18 @@ public abstract class BaseStorePage {
         productList.get(i).click();
     }
 
-    public static String typeRandomNumberOfProduct(int i){
-        Random random = new Random();
-        int j=0;
-        int numberProduct = 0;
-        while(random.nextInt(i) != 0){
-            numberProduct =  random.nextInt(i);
-            j++;
-        }
-        String number = String.valueOf(numberProduct);
-        return number;
+    public static String typeRandomQuantity(int i){
+        int randomQuantity = 0;
+        do{
+            Random random = new Random();
+            randomQuantity = random.nextInt(10);
+        }while(randomQuantity == 0);
+        return  String.valueOf(randomQuantity);
     }
+    public static int typeQuatity(int i){
+        Random random = new Random();
+        int randomQuantity = random.nextInt(10);
+        return randomQuantity;
+    }
+
 }
