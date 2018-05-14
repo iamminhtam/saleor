@@ -14,8 +14,10 @@ public class ProductPage extends BasePage {
     @FindBy(id = "id_quantity")
     WebElement txtQuantity;
     @FindBy(xpath = "//button[contains(@class, 'primary')]")
-    private WebElement btnAddToCart;
+    WebElement btnAddToCart;
 
+    @FindBy(xpath = "//p[contains(@class,'alert')]")
+    WebElement txtAlert;
     /*
     PUBLIC ACTION
      */
@@ -34,5 +36,12 @@ public class ProductPage extends BasePage {
     }
     public String getQuantity(){
         return txtQuantity.getText();
+    }
+    public String getAlert() {
+        String alert = "";
+        if(txtAlert != null)    {
+            alert = txtAlert.getText();
+        }
+        return alert;
     }
 }
