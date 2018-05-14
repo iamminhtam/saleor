@@ -23,6 +23,7 @@ public class ProductPage extends BasePage {
      */
     public void typeQuantity(String i){
         if(txtQuantity != null){
+            ElementAction.clear(txtQuantity, "Quantity");
             ElementAction.type(txtQuantity, "Quantity", i);
         }
     }
