@@ -5,9 +5,12 @@
         <parameter name="browser" value="chrome"/>
 
         <classes>
-            <!--<class name="com.getsaleor.demo.pages.LoginTest"/>-->
-            <class name="com.getsaleor.demo.pages.CartTest"/>
+            <class name="com.getsaleor.demo.pages.LoginTest"/>
+            <!--<class name="com.getsaleor.demo.pages.CartTest"/>-->
             <!--<class name="com.getsaleor.demo.pages.RegisterTest"/>-->
         </classes>
     </test>
+    <listeners>
+        <listener class-name="utilities.TestListener"></listener>
+    </listeners>
 </suite>

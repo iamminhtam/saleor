@@ -5,9 +5,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import utilities.Common;
+import utilities.LogUtils;
 import utilities.PageGenerator;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 public class LoginTest extends BaseTest {
 
@@ -44,7 +46,7 @@ public class LoginTest extends BaseTest {
         String[] testData = getTestData("tc01");
         //Test steps
         login(testData[0], testData[1]);
-        System.out.println("Logged in to successfully");
+        LogUtils.info("Logged in to successfully");
         //Assertion
         softAssert.assertEquals(3, homePage.getGoToRightNav().length);
         String[] rightNavItemsLoggedIn = {"DASHBOARD", "YOUR ACCOUNT", "LOG OUT"};
@@ -55,7 +57,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertEquals(homePage.getGoToRightNav(),rightNavItemsLogout);
         softAssert.assertEquals(homePage.getMessageWhenLogout(), "You have been successfully logged out.");
         softAssert.assertAll();
-        System.out.println("Logged out");
+        LogUtils.info("Logged out");
     }
 
     @Test(description = "Log in unsuccessfully with invalid username or password")
@@ -65,9 +67,9 @@ public class LoginTest extends BaseTest {
         String[] testData = getTestData("tc02");
         //Test steps
         login(testData[0],testData[1]);
-        System.out.println("loginUnsuccessfullyWithInvalidUsernameOrPassword");
+        LogUtils.info("loginUnsuccessfullyWithInvalidUsernameOrPassword");
         //Assertion
-        softAssert.assertEquals(loginPage.getErrorMessage(), testData[2]);
+        softAssert.assertEquals(loginPage.getErrorMessage(testData[2]), testData[2]);
         softAssert.assertAll();
     }
 
@@ -76,12 +78,12 @@ public class LoginTest extends BaseTest {
         test = extentReports.createTest("Log in unsuccessfully as missing username or password");
         //Test data
         String[] testData = getTestData("tc03");
-        System.out.println(testData[2]);
+        LogUtils.info(testData[2]);
         //Step test
         login(testData[0], testData[1]);
-        System.out.println("LoginUnsuccessfullyAsMissingUsername");
+        LogUtils.info("LoginUnsuccessfullyAsMissingUsername");
         //Assertion
-        softAssert.assertEquals(loginPage.getErrorMessage(), testData[2]);
+        softAssert.assertEquals(loginPage.getErrorMessage(testData[2]), testData[2]);
         softAssert.assertAll();
     }
 
@@ -92,9 +94,9 @@ public class LoginTest extends BaseTest {
         String[] testData = getTestData("tc04");
         //Step test
         login(testData[0], testData[1]);
-        System.out.println("LoginUnsuccessfullyAsMissingPassword");
+        LogUtils.info("LoginUnsuccessfullyAsMissingPassword");
         //Assertion
-        softAssert.assertEquals(loginPage.getErrorMessage(), testData[2]);
+        softAssert.assertEquals(loginPage.getErrorMessage(testData[2]), testData[2]);
         softAssert.assertAll();
     }
 
@@ -106,7 +108,7 @@ public class LoginTest extends BaseTest {
         //Test steps
         login(testData[0], testData[1]);
         //Assertion
-        softAssert.assertEquals(loginPage.getErrorMessage(), testData[2]);
+        softAssert.assertEquals(loginPage.getErrorMessage(testData[2]), testData[2]);
         softAssert.assertAll();
     }
 
@@ -128,7 +130,7 @@ public class LoginTest extends BaseTest {
         softAssert.assertEquals(homePage.getGoToRightNav(),rightNavItemsLogout);
         softAssert.assertEquals(homePage.getMessageWhenLogout(), "You have been successfully logged out.");
         softAssert.assertAll();
-        System.out.println("Logged out");
+        LogUtils.info("Logged out");
     }
 
     @Test(description = "Log in unsuccessfully as username is an invalid email address")
@@ -139,7 +141,7 @@ public class LoginTest extends BaseTest {
         //Test steps
         login(testData[0], testData[1]);
         //Assertion
-        softAssert.assertEquals(loginPage.getErrorMessage(), testData[2]);
+        softAssert.assertEquals(loginPage.getErrorMessage(testData[2]), testData[2]);
         softAssert.assertAll();
     }
 
@@ -151,7 +153,7 @@ public class LoginTest extends BaseTest {
         //Test steps
         login(testData[0], testData[1]);
         //Assertion
-        softAssert.assertEquals(loginPage.getErrorMessage(), testData[2]);
+        softAssert.assertEquals(loginPage.getErrorMessage(testData[2]), testData[2]);
         softAssert.assertAll();
     }
 }

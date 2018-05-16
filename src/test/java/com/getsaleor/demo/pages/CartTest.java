@@ -25,6 +25,15 @@ public class CartTest extends BaseTest {
         homePage = PageGenerator.getInstance(HomePage.class);
     }
 
+//    @Test(description = "Check cart")
+//    public void CheckCart(){
+//        test = extentReports.createTest("Check cart");
+//        goToCart();
+//        softAssert.assertEquals(cartPage.iconBadge, "0");
+//        softAssert.assertEquals(cartPage.getInfo(), "There are no products in your shopping cart.");
+//        System.out.println("There are no products in your shopping cart.");
+//    }
+
 //    @Test(description = "Add Single Product Into Cart Successfully")
 //    public void AddSingleProductIntoCartSuccessfully(){
 //        test = extentReports.createTest("Add Single Product Into Cart Successfully");
@@ -157,6 +166,5 @@ public class CartTest extends BaseTest {
 //            softAssert.assertEquals(productPage.getAlert(), "This product is currently unavailable.");
 //            System.out.println("This product is currently unavailable.");
 //        }
-//
 //    }
 }

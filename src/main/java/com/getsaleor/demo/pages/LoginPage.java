@@ -1,10 +1,12 @@
 package com.getsaleor.demo.pages;
 
 import com.getsaleor.demo.BasePage;
+import jdk.nashorn.internal.runtime.regexp.joni.exception.ErrorMessages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utilities.Common;
 import utilities.ElementAction;
+import utilities.LogUtils;
 
 public class LoginPage extends BasePage {
     public LoginPage(){
@@ -52,15 +54,16 @@ public class LoginPage extends BasePage {
         ElementAction.click(btnLogin, "Log in");
         return this;
     }
-    public String getErrorMessage(){
-        return Common.getTextNode(errorMessage);
-    }
-
-    public LoginPage clickForgotPassword(){
-        if(linkForgotPassword != null){
-            ElementAction.click(linkForgotPassword, "Forgot password");
+    public String getErrorMessage(String msg){
+        String actualErrorMessage = Common.getTextNode(errorMessage);
+        boolean result = actualErrorMessage.equals(msg);
+        String log = String.format(" [Expectation] See error message '%s': %b", msg,result);
+        if (result) {
+            LogUtils.info(log);
+        } else {
+            LogUtils.warn( log + String.format(" (actual: '%s", actualErrorMessage));
         }
-        return this;
+        return actualErrorMessage;
     }
 
 }
