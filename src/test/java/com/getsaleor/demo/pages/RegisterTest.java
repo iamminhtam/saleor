@@ -3,6 +3,7 @@ package com.getsaleor.demo.pages;
 import com.getsaleor.demo.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import utilities.Common;
 import utilities.LogUtils;
 import utilities.PageGenerator;
 
@@ -24,7 +25,7 @@ public class RegisterTest extends BaseTest{
         registerPage.typeEmail(email)
                     .typePassword(password)
                     .clickCreateBtn();
-        wait(1);
+        Common.sleep(1);
     }
 
     @BeforeClass
@@ -41,7 +42,7 @@ public class RegisterTest extends BaseTest{
         register(testData[0], testData[1]);
         LogUtils.info("Registered successfully");
         //Assertion
-        softAssert.assertEquals(2, homePage.getGoToRightNav().length);
+        softAssert.assertEquals(2, homePage. getGoToRightNav().length);
         String[] rightNavItemsLoggedIn = {"YOUR ACCOUNT", "LOG OUT"};
         softAssert.assertEquals(homePage.getGoToRightNav(), rightNavItemsLoggedIn);
         softAssert.assertEquals(homePage.getMessageWhenRegister(), testData[2]);
@@ -50,7 +51,6 @@ public class RegisterTest extends BaseTest{
         String[] rightNavItemsLogout = {"REGISTER", "LOG IN"};
         softAssert.assertEquals(homePage.getGoToRightNav(),rightNavItemsLogout);
         softAssert.assertEquals(homePage.getMessageWhenLogout(), "You have been successfully logged out.");
-        softAssert.assertAll();
         LogUtils.info("Logged out");
     }
 
@@ -62,7 +62,6 @@ public class RegisterTest extends BaseTest{
         //Test steps
         register(testData[0], testData[1]);
         softAssert.assertEquals(registerPage.getErrorMessage(),testData[2]);
-        softAssert.assertAll();
     }
 
     @Test(description = "Register unsuccessfully as invalid email address", priority = 3)

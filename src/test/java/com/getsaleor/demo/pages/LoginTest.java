@@ -22,7 +22,7 @@ public class LoginTest extends BaseTest {
         loginPage.typeUsername(username)
                  .typePassword(password)
                  .clickLoginBtn();
-        wait(2);
+        Common.sleep(1);
     }
 
     public String[] getTestData(String testCase){

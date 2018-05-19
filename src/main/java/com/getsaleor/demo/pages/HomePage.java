@@ -69,16 +69,7 @@ public class HomePage extends BasePage {
     public void clickApparelLink(){
         if(menu != null){
             ElementAction.click(menu.get(0), "Apparel");
-        }
-    }
-    public void clickAccessoriesLink(){
-        if(menu != null){
-            ElementAction.click(menu.get(1), "Groceries");
-        }
-    }
-    public void clickGroceriesLink(){
-        if(menu != null){
-            ElementAction.click(menu.get(2), "Groceries");
+            LogUtils.info("Go to Apparel Page");
         }
     }
 

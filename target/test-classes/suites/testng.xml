@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Automation Regression Test">
-    <test name="Test Suite">
+    <test name="Test Suite - Register">
         <parameter name="browser" value="chrome"/>
-
         <classes>
-            <!--<class name="com.getsaleor.demo.pages.LoginTest"/>-->
-            <!--<class name="com.getsaleor.demo.pages.CartTest"/>-->
             <class name="com.getsaleor.demo.pages.RegisterTest"/>
+        </classes>
+    </test>
+    <test name="Test Suite - Login">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.getsaleor.demo.pages.LoginTest"/>
+        </classes>
+    </test>
+    <test name="Test Suite - Cart">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.getsaleor.demo.pages.CartTest"/>
+        </classes>
+    </test>
+    <test name="Test Suite - Scenario">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.getsaleor.demo.pages.ScenarioTest"/>
         </classes>
     </test>
     <listeners>

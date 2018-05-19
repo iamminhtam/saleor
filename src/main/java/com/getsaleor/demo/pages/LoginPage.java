@@ -27,10 +27,6 @@ public class LoginPage extends BasePage {
     @FindBy(css = "div.alert-danger")
     private WebElement errorMessage;
 
-    @FindBy(linkText = "Forgot password?")
-    private WebElement linkForgotPassword;
-
-
     /*
     PUBLIC ACTIONS
      */

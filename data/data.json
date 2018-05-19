@@ -51,7 +51,7 @@
 
 	"tc101":{
 		"name": "Register successfully with a valid email and password",
-		"email": "test112312313221123233@gmail.com",
+		"email": "tester123123123456456789000963@gmail.com",
 		"password": "admin",
 		"message": "User has been created."
 	},
@@ -81,7 +81,7 @@
 	},
 	"tc106":{
 		"name": "Register unsuccessfully with invalid password",
-		"email": "test101111111111111111111222222222222222333333@gmail.com",
+		"email": "test123312312378932100033333@gmail.com",
 		"password": "123",
 		"message": "Enter a valid password."
 	}

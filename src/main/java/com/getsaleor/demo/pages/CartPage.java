@@ -2,6 +2,7 @@ package com.getsaleor.demo.pages;
 
 import com.getsaleor.demo.BasePage;
 import com.getsaleor.demo.BaseStorePage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utilities.Common;
@@ -41,6 +42,9 @@ public class CartPage extends BasePage {
 
     @FindBy(css = "span.cart-item-delete")
     WebElement bin;
+
+    @FindBy(css = "a.cart__submit")
+    WebElement btnCheckOut;
     /*
     PUBLIC ACTION
      */
@@ -105,5 +109,11 @@ public class CartPage extends BasePage {
     }
     public void clickBin(){
         ElementAction.click(bin, "Bin");
+    }
+
+    public void clickCheckOut(){
+        if(btnCheckOut != null){
+            ElementAction.click(btnCheckOut, "CheckOut");
+        }
     }
 }

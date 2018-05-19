@@ -29,12 +29,8 @@ public class BaseTest extends ExtentReports {
     public static ExtentHtmlReporter htmlReporter;
     public static ExtentTest test;
 
-    public void wait(int i){
-        driver.manage().timeouts().implicitlyWait(i*1000, TimeUnit.SECONDS);
-    }
-
     public String getTitlePage(){
-        return driver.getTitle().toString();
+        return driver.getTitle();
     }
 
     @BeforeSuite
@@ -59,6 +55,8 @@ public class BaseTest extends ExtentReports {
         PageGenerator.initializeDriver(driver);
         LogUtils.info("Go to Saleor");
     }
+
+
     @AfterTest
     public void cleanUpTest(){
         driver.quit();
