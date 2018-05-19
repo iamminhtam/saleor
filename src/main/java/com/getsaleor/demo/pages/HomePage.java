@@ -6,13 +6,14 @@ import org.openqa.selenium.support.FindBy;
 
 import utilities.Common;
 import utilities.ElementAction;
+import utilities.LogUtils;
 
 import java.util.List;
 
 public class HomePage extends BasePage {
 
     public HomePage(){
-        System.out.println("You are now on Home Page");
+        LogUtils.info("You are now on Home Page");
     }
     /*
     ELEMENTS

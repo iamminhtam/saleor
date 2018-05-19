@@ -119,7 +119,7 @@ public class LoginTest extends BaseTest {
         String[] testData = getTestData("tc06");
         //Test steps
         login(testData[0], testData[1]);
-        System.out.println("Logged in successfully.");
+        LogUtils.info("Logged in successfully.");
         //Assertion
         softAssert.assertEquals(3, homePage.getGoToRightNav().length);
         String[] rightNavItemsLoggedIn = {"DASHBOARD", "YOUR ACCOUNT", "LOG OUT"};

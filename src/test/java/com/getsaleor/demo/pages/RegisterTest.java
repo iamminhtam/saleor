@@ -3,6 +3,7 @@ package com.getsaleor.demo.pages;
 import com.getsaleor.demo.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import utilities.LogUtils;
 import utilities.PageGenerator;
 
 public class RegisterTest extends BaseTest{
@@ -11,7 +12,6 @@ public class RegisterTest extends BaseTest{
 
     public String[] getTestData(String testCase){
         testData = dataReader.get(testCase);
-        testData = dataReader.get("tc101");
         final String EMAIL = (String) testData.get("email");
         final String PASSWORD = (String) testData.get("password");
         final String MESSAGE = (String) testData.get("message");
@@ -39,7 +39,7 @@ public class RegisterTest extends BaseTest{
         String[] testData = getTestData("tc101");
         //Test steps
         register(testData[0], testData[1]);
-        System.out.println("Registered successfully");
+        LogUtils.info("Registered successfully");
         //Assertion
         softAssert.assertEquals(2, homePage.getGoToRightNav().length);
         String[] rightNavItemsLoggedIn = {"YOUR ACCOUNT", "LOG OUT"};
@@ -51,7 +51,7 @@ public class RegisterTest extends BaseTest{
         softAssert.assertEquals(homePage.getGoToRightNav(),rightNavItemsLogout);
         softAssert.assertEquals(homePage.getMessageWhenLogout(), "You have been successfully logged out.");
         softAssert.assertAll();
-        System.out.println("Logged out");
+        LogUtils.info("Logged out");
     }
 
     @Test(description = "Register unsuccessfully as existing email address", priority = 2)
@@ -83,7 +83,7 @@ public class RegisterTest extends BaseTest{
         String[] testData = getTestData("tc104");
         //Test steps
         register(testData[0], testData[1]);
-        System.out.println("Register unsuccessfully as missing email");
+        LogUtils.info("Register unsuccessfully as missing email");
         softAssert.assertEquals(getTitlePage(), "Sign Up — Saleor demo");
         softAssert.assertAll();
     }
@@ -95,7 +95,7 @@ public class RegisterTest extends BaseTest{
         String[] testData = getTestData("tc105");
         //Test steps
         register(testData[0], testData[1]);
-        System.out.println("Register unsuccessfully as missing password");
+        LogUtils.info("Register unsuccessfully as missing password");
         softAssert.assertEquals(getTitlePage(),"Sign Up — Saleor demo");
         softAssert.assertAll();
     }
@@ -107,7 +107,7 @@ public class RegisterTest extends BaseTest{
         String[] testData = getTestData("tc106");
         //Test steps
         register(testData[0], testData[1]);
-        System.out.println("Register unsuccessfully as invalid password");
+        LogUtils.info("Register unsuccessfully as invalid password");
         softAssert.assertEquals(getTitlePage(),"Sign Up — Saleor demo");
         softAssert.assertAll();
     }

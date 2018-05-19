@@ -5,10 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utilities.Common;
 import utilities.ElementAction;
+import utilities.LogUtils;
 
 public class RegisterPage extends BasePage{
     public RegisterPage(){
-        System.out.println("You are now on Register Page");
+        LogUtils.info("You are now on Register Page");
     }
     /*
     ELEMENTS

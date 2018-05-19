@@ -14,6 +14,7 @@ import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import utilities.DataReader;
 import utilities.DriverFactory;
+import utilities.LogUtils;
 import utilities.PageGenerator;
 
 import java.util.concurrent.TimeUnit;
@@ -56,7 +57,7 @@ public class BaseTest extends ExtentReports {
         driver = DriverFactory.getDriverInstance(browserName);
         driver.get(Const.SITE_URL); //go to page - refresh the page and change url
         PageGenerator.initializeDriver(driver);
-        System.out.println("Go to Saleor");
+        LogUtils.info("Go to Saleor");
     }
     @AfterTest
     public void cleanUpTest(){

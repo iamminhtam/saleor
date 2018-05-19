@@ -10,7 +10,7 @@ import utilities.LogUtils;
 
 public class LoginPage extends BasePage {
     public LoginPage(){
-        System.out.println("You are now on Login Page");
+        LogUtils.info("You are now on Login Page");
     }
     /*
     ELEMENTS
@@ -65,5 +65,4 @@ public class LoginPage extends BasePage {
         }
         return actualErrorMessage;
     }
-
 }

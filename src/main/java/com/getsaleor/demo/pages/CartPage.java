@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utilities.Common;
 import utilities.ElementAction;
+import utilities.LogUtils;
 
 import java.util.List;
 
@@ -73,7 +74,7 @@ public class CartPage extends BasePage {
         String quantity = String.valueOf(number);
         if(inputQuantity != null){
             for(int i = 0; i<inputQuantity.size(); i++){
-                System.out.println(inputQuantity.get(i).getText());
+                LogUtils.info(inputQuantity.get(i).getText());
                 ElementAction.type(inputQuantity.get(i), "Quantity", quantity);
             }
         }
