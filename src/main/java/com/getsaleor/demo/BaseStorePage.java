@@ -21,7 +21,6 @@ public abstract class BaseStorePage {
     ACTION
      */
     public void selectARandomProduct(){
-
         Random random = new Random();
         int i = random.nextInt(productList.size());
         productList.get(i).click();

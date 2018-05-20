@@ -51,13 +51,13 @@
 
 	"tc101":{
 		"name": "Register successfully with a valid email and password",
-		"email": "tester123123123456456789000963@gmail.com",
+		"email": "autotester1348@gmail.com",
 		"password": "admin",
 		"message": "User has been created."
 	},
 	"tc102":{
 		"name": "Register unsuccessfully with an existing email",
-		"email": "test104456546@gmail.com",
+		"email": "test1044565463210@gmail.com",
 		"password": "admin",
 		"message": "This email has already been registered."
 	},
@@ -81,8 +81,20 @@
 	},
 	"tc106":{
 		"name": "Register unsuccessfully with invalid password",
-		"email": "test123312312378932100033333@gmail.com",
+		"email": "autotester01348@gmail.com",
 		"password": "123",
 		"message": "Enter a valid password."
+	},
+	"sce01":{
+		"name": "Register successfully with valid password",
+		"email": "autouser001@gmail.com",
+		"password": "admin123",
+		"message": "User has been created."
+	}
+	"sce02":{
+		"name": "Log in successfully with a valid username and password",
+		"username": "admin@example.com",
+		"password": "admin",
+		"message": "You have been successfully logged out."
 	}
 }

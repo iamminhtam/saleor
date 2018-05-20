@@ -60,7 +60,7 @@ public class CartTest extends BaseTest {
                 LogUtils.info("This product is currently unavailable.");
             }
         }else{
-            LogUtils.info("This product is out of stock.");
+            LogUtils.warn("This product is out of stock.");
         }
     }
 
@@ -83,8 +83,6 @@ public class CartTest extends BaseTest {
             }else{
                 LogUtils.info("This product is currently unavailable.");
             }
-        }else{
-
         }
         //Select A Product in Groceries page
         homePage.clickApparelLink();
@@ -100,8 +98,6 @@ public class CartTest extends BaseTest {
             }else{
                 LogUtils.info("This product is currently unavailable.");
             }
-        }else{
-
         }
         Common.sleep(2);
         goToCart();
@@ -118,7 +114,7 @@ public class CartTest extends BaseTest {
         homePage.clickApparelLink();
         apparelPage = PageGenerator.getInstanceStorePage(ApparelPage.class);
         Common.sleep(3);
-        apparelPage.selectAProduct(2);
+        apparelPage.selectAProduct(4);
         Common.sleep(2);
         productPage = PageGenerator.getInstance(ProductPage.class);
         if(productPage.txtQuantity.isDisplayed()) {
@@ -136,6 +132,7 @@ public class CartTest extends BaseTest {
                 goToCart();
                 softAssert.assertEquals(cartPage.getInfo(), "There are no products in your shopping cart.");
             }
+            cartPage.clickBin();
             LogUtils.info("Change quantity of product succeed.");
         }else{
             softAssert.assertEquals(productPage.getAlert(), "This product is currently unavailable.");
@@ -151,7 +148,7 @@ public class CartTest extends BaseTest {
         homePage.clickApparelLink();
         apparelPage = PageGenerator.getInstanceStorePage(ApparelPage.class);
         Common.sleep(3);
-        apparelPage.selectAProduct(2);
+        apparelPage.selectAProduct(7);
         Common.sleep(3);
         productPage = PageGenerator.getInstance(ProductPage.class);
         if(productPage.btnAddToCart.isEnabled()){
@@ -169,7 +166,7 @@ public class CartTest extends BaseTest {
                 LogUtils.info("This product is currently unavailable.");
             }
         }else{
-            LogUtils.info("This product is out of stock.");
+            LogUtils.warn("This product is out of stock.");
         }
     }
 
@@ -195,10 +192,10 @@ public class CartTest extends BaseTest {
                 softAssert.assertEquals(checkOutPage.getHeader(), "Checkout");
                 LogUtils.info("Check out now");
             }else{
-                LogUtils.info("Checkout button do not work");
+                LogUtils.warn("Checkout button do not work");
             }
         }else{
-            LogUtils.info("This product is out of stock.");
+            LogUtils.warn("This product is out of stock.");
         }
     }
 }
